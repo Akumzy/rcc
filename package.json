@@ -1,8 +1,20 @@
 {
-  "name": "with-electron-typescript",
-  "productName": "ElectronTypescriptNext",
-  "version": "1.0.0",
+  "name": "akuma-rcc",
+  "productName": "AkumaRCC",
+  "author": {
+    "email": "akumaisaacakuma@gmail.com",
+    "name": "Akuma Isaac Akuma",
+    "url": "https://akumzy.com"
+  },
+  "homepage": "https://github.com/Akumzy/rcc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Akumzy/rcc"
+  },
+  "description": "A simple RCC demo Application",
+  "version": "0.0.6",
   "main": "main/index.js",
+  "private": true,
   "scripts": {
     "clean": "rimraf dist main renderer/out renderer/.next",
     "start": "electron .",
@@ -18,23 +30,53 @@
     "files": [
       "main",
       "renderer/out"
-    ]
+    ],
+    "linux": {
+      "icon": "icons",
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "utility"
+    },
+    "win": {
+      "icon": "icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "@types/uuid": "^8.3.0",
     "electron": "^7.1.7",
     "electron-builder": "^21.2.0",
-    "next": "latest",
+    "next": "9.5.1",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
     "rimraf": "^3.0.0",
+    "tailwindcss": "^1.9.4",
     "typescript": "^3.7.4"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.2.0",
     "electron-is-dev": "^1.1.0",
     "electron-next": "^3.1.5",
+    "expr-eval": "^2.0.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
-  },
-  "license": "MIT"
+    "react-dom": "^16.12.0",
+    "react-feather": "^2.0.8",
+    "uuid": "^8.3.1"
+  }
 }
